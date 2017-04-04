@@ -24,7 +24,13 @@
 				<input type="text" id="myInput4" >				
 				
 				<label><b>Remarks</b></label>
-				<input type="text" id="myInput7" >
+				<select name="country" id="myInput7">  
+					<!-- <option selected="" value="Default">(Select remark)</option>  --> 
+					<option value="Left">Left</option>  
+					<option value="Lost">Lost</option>
+					<option value="Confiscated">Confiscated</option>  
+				</select>
+
 			
 				<button class="addbtn" onclick="addData()">Add</button>
 				<button class="closebtn" onclick="cancel()">Cancel</button>
