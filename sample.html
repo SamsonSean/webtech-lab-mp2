@@ -11,14 +11,25 @@
 	<div id="popup" class="modal">
 		<div class="popup_container">
 			<div class="content">
+			
 				<label><b>ID Number</b></label>
-				<input type="text" id="idnumber">
+				<input type="text" name="myInput1" id="myInput1" onblur="blurFunctionIdNo(name)" placeholder="idno..">
 			
 				<label><b>Name</b></label>
-				<input type="text" id="studname">					
+				<input type="text" name="myInput2" id="myInput2" onblur="blurFunctionName(name)"placeholder="name...">					
+				<label><b>Gate pass#</b></label>
+				<input type="text" id="myInput3" >
+			
+				<label><b>Serial#</b></label>
+				<input type="text" id="myInput4" >				
+				
+				<label><b>Remarks</b></label>
+				<input type="text" id="myInput7" >
 			
 				<button class="addbtn" onclick="addData()">Add</button>
 				<button class="closebtn" onclick="cancel()">Cancel</button>
+			
+			
 			</div>
 			</div>
 		</div>
@@ -34,8 +45,10 @@
 			<tr>
 				<th>ID Number</th>
 				<th>Name</th>
-				<th>Time Borrowed</th>
+				 <th>Gate pass#</th>
+				 <th>Serial#</th>
 				<th>Date Borrowed</th>
+				<th>Date Returned</th>
 				<th>Action</th>
 			</tr>
 		</table>

@@ -55,3 +55,43 @@ function addData(){
     allRows++;
 
 }
+
+function blurFunctionIdNo(x){
+           // Validation rule
+           
+            var re = /^[0-9]{7}$/; //input must start with number and exactly 7 digit
+            // Check input
+            if(re.test(document.getElementById(x).value)){
+              // Style green
+              document.getElementById(x).style.background ='#ccffcc';
+              // Hide error prompt
+             //document.getElementById(x + 'Error').style.display = "none";
+              return true;
+            }else{
+              // Style red
+              document.getElementById(x).style.background ='#e35152';
+              // Show error prompt
+             // document.getElementById(x + 'Error').style.display = "block";
+              return false; 
+            }
+}
+      
+function blurFunctionName(x){
+           // Validation rule
+           //^[0-9]{4,6}$/
+            var re = /[A-Za-z -']$/;
+            // Check input
+            if(re.test(document.getElementById(x).value)){
+              // Style green
+              document.getElementById(x).style.background ='#ccffcc';
+              // Hide error prompt
+             //document.getElementById(x + 'Error').style.display = "none";
+              return true;
+            }else{
+              // Style red
+              document.getElementById(x).style.background ='#e35152';
+              // Show error prompt
+             // document.getElementById(x + 'Error').style.display = "block";
+              return false; 
+            }
+ }
