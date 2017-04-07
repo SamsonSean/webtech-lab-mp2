@@ -57,46 +57,80 @@ function openPopup(){
 
 }
 */
+var validate1 = 1;
+var validate2 = 1;
+var validate3 = 1;
+var validate4 = 1;
 
-function blurFunctionIdNo(x){
-           // Validation rule
-           
-            var idNO = /^[0-9]{7}$/; //idNO must start with number and exactly 7 digit
+function checkInput1(){
+ 
+    var re = /^[0-9]{7}$/; //input must start with number and exactly 7 digit
             // Check input
-            if(idNO.test(document.getElementById(x).value)){
+            if(re.test(document.getElementById("myInput1").value)){
               // Style green
-              document.getElementById(x).style.background ='#ccffcc';
-              // Hide error prompt
-             //document.getElementById(x + 'Error').style.display = "none";
+              document.getElementById("myInput1").style.background ='lightgreen';
+              validate1 = 0;
+
               return true;
             }else{
               // Style red
-              document.getElementById(x).style.background ='#e35152';
-              // Show error prompt
-             // document.getElementById(x + 'Error').style.display = "block";
+              document.getElementById("myInput1").style.background ='red';
+
+              return false; 
+            }
+ }    
+function checkInput2(){
+    var re = /^[A-Za-z ,-.]+$/;
+            // Check input
+            if(re.test(document.getElementById("myInput2").value)){
+              // Style green
+              document.getElementById("myInput2").style.background ='lightgreen';
+              validate2 = 0;
+
+              return true;
+            }else{
+              // Style red
+              document.getElementById("myInput2").style.background ='red';
+
               return false; 
             }
 }
-      
-function blurFunctionName(x){
-           // Validation rule
-           //^[0-9]{4,6}$/
-            var Name = /[A-Za-z -']$/;
+
+ function checkInput3(){
+    //var x = document.getElementById("myInput3");
+    var re = /^[0-9]+$/; //input must start with number and exactly 7 digit
             // Check input
-            if(Name.test(document.getElementById(x).value)){
+            if(re.test(document.getElementById("myInput3").value)){
               // Style green
-              document.getElementById(x).style.background ='#ccffcc';
-              // Hide error prompt
-             //document.getElementById(x + 'Error').style.display = "none";
+              document.getElementById("myInput3").style.background ='lightgreen';
+              validate3 = 0;
+
               return true;
             }else{
               // Style red
-              document.getElementById(x).style.background ='#e35152';
-              // Show error prompt
-             // document.getElementById(x + 'Error').style.display = "block";
+              document.getElementById("myInput3").style.background ='red';
+
               return false; 
             }
- }
+ } 
+
+  function checkInput4(){
+    //var x = document.getElementById("myInput3");
+    var re = /^[0-9]+$/; //input must start with number and exactly 7 digit
+            // Check input
+            if(re.test(document.getElementById("myInput4").value)){
+              // Style green
+              document.getElementById("myInput4").style.background ='lightgreen';
+              validate4 = 0;
+
+              return true;
+            }else{
+              // Style red
+              document.getElementById("myInput4").style.background ='red';
+
+              return false; 
+            }
+ } 
  
  function addData(){
 		var d = new Date(); // for now
@@ -113,8 +147,8 @@ function blurFunctionName(x){
 		var input7 = document.getElementById("myInput7").value;
 		var input8 = ' <input id="' + (currentNumberOfRow+1) + '"  class="remove" type="button" value="Remove" onclick="deleteRow(this)"/> ';
 
-		    if (input1 == '' || input2 == '') {
-        alert("FILL OUT ALL BLANK!");
+	if (validate1 >= 1 || validate2 >= 1 || validate3 >= 1 || validate4>=1) {
+        alert("FILL OUT ALL CORRECTLY!");
     }else{
 
         var thatTable = document.getElementById("records");
