@@ -75,7 +75,7 @@ function checkInput1(){
             }else{
               // Style red
               document.getElementById("myInput1").style.background ='red';
-
+				validate1 = false;
               return false; 
             }
  }    
@@ -91,7 +91,7 @@ function checkInput2(){
             }else{
               // Style red
               document.getElementById("myInput2").style.background ='red';
-
+				validate2 = false;
               return false; 
             }
 }
@@ -109,7 +109,7 @@ function checkInput2(){
             }else{
               // Style red
               document.getElementById("myInput3").style.background ='red';
-
+				validate3 = false;
               return false; 
             }
  } 
@@ -127,7 +127,7 @@ function checkInput2(){
             }else{
               // Style red
               document.getElementById("myInput4").style.background ='red';
-
+				validate4 = false;
               return false; 
             }
  } 

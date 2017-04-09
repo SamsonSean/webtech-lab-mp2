@@ -3,8 +3,8 @@
 <head>
 <title>Sample Design</title>
 <meta charset="UTF-8">
-<link rel='stylesheet' href='sample.css'>
-<script src="sample.js"></script>
+<link rel='stylesheet' href='WebDesign.css'>
+
 </head>
 
 <body>
@@ -21,7 +21,28 @@
 				<input type="text" id="myInput3" onkeyup="checkInput3()">
 			
 				<label><b>Serial#</b></label>
-				<input type="text" id="myInput4" onkeyup="checkInput4()" >				
+				<input type="text" id="myInput4" onkeyup="checkInput4()" >
+				
+				<label><b>Course and year</b></label>
+				<!-- <input type="text" id="myInput6">	 -->
+				<select id="myInput6" required >  
+					<!-- <option value="Default">(Select remark)</option>   -->
+					<option  value="BSIT">BSIT</option>  
+					<option value="BSCS">BSCS</option>
+					<option value="BAENG">BAENG</option> 
+					<option value="BSECE">BSECE</option>  
+					<option value="PSYCH">PSYCH</option>  
+				</select>
+				<select id="myInput6.1" required >  
+					<!-- <option value="Default">(Select remark)</option>   -->
+					<option value="1">1</option>  
+					<option value="2">2</option>
+					<option value="3">3</option> 
+					<option value="4">4</option>  
+					<option value="5">5</option> 
+
+				</select>
+				<br>
 				
 				<label><b>Remarks</b></label>
 				<select name="country" id="myInput7">  
@@ -61,4 +82,5 @@
 	<div>
 	
 </body>
+<script src="Functions.js"></script>
 </html>
