@@ -112,6 +112,8 @@ table, th, tr, td{
 	color:white;
 	padding:10px;
 	width:100%;
+	border-radius: 7px;
+
 }
 .remove{
 	font-size:1em;
