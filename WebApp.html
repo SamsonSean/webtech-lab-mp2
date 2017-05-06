@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html manifest="appCache.txt">
 <head>
 <title>Sample Design</title>
 <meta charset="UTF-8">
@@ -7,31 +7,68 @@
 
 </head>
 
-<body>
-	<div id="popup" class="modal">
-		<div class="popup_container">
-			<div class="content">
-			
+<body onload="refresh()">
+
+	<div id="popup" class="modal" style="border-color:grey">
+		<div class="popup_container" style="border-color:black">
+			<div class="content" style="border-color:grey">
+
 				<label><b>ID Number</b></label>
-				<input type="text" name="myInput1" id="myInput1" onkeyup="checkInput1()" placeholder="idno..">
+				<input type="text" name="myInput1" class="myInput1" id="myInput1" onkeyup="checkInput1()"  placeholder="idno...">
 			
 				<label><b>Name</b></label>
-				<input type="text" name="myInput2" id="myInput2" onkeyup="checkInput2()" placeholder="name...">					
+				<input type="text" name="myInput2" class="myInput2" id="myInput2" onkeyup="checkInput2()" placeholder="name...">	
+
 				<label><b>Gate pass#</b></label>
-				<input type="text" id="myInput3" onkeyup="checkInput3()">
+				<input type="text" id="myInput3" class="myInput3" onkeyup="checkInput3()">
 			
 				<label><b>Serial#</b></label>
-				<input type="text" id="myInput4" onkeyup="checkInput4()" >
-				
-				<label><b>Course and year</b></label>
+				<input type="text" id="myInput4" class="myInput4" onkeyup="checkInput4()">	
+
+				<label ><b>Course and year</b></label>
 				<!-- <input type="text" id="myInput6">	 -->
 				<select id="myInput6" required >  
 					<!-- <option value="Default">(Select remark)</option>   -->
-					<option  value="BSIT">BSIT</option>  
+					<option value="SCIS">SCIS</option>  
+					<option value="BSIT">BSIT</option>  
 					<option value="BSCS">BSCS</option>
-					<option value="BAENG">BAENG</option> 
-					<option value="BSECE">BSECE</option>  
+					<option value="BLIS">BLIS</option> 
+					<option value="BSMATH">BSMATH</option> 
+					<option value="BSIS">BSIS</option> 
+					<option value="SEA">SEA</option>  
+					<option value="BSARCH">BSARCH</option> 
+					<option value="BSCHE">BSCHE</option> 
+					<option value="BSCE">BSCE</option> 
+					<option value="BSECE">BSECE</option> 
+					<option value="BSEE">BSEE</option> 
+					<option value="BSGE">BSGE</option> 
+					<option value="BSIE">BSIE</option> 
+					<option value="BSME">BSME</option> 
+					<option value="SOH">SOH</option> 
+					<option value="BACOM">BACOM</option> 
+					<option value="BALS">BALS</option> 
+					<option value="BAPIS">BAPIS</option> 
+					<option value="BAENGL">BAENGL</option> 
+					<option value="BAPOLITSC">BAPOLITSC</option> 
 					<option value="PSYCH">PSYCH</option>  
+					<option value="BSSWK">BSSWK</option>
+					<option value="SON">School of Nursing</option>  
+					<option value="BSN">BSN</option>  
+					<option value="STELA">STELA</option>  
+					<option value="BEEDGENED">BEEDGENED</option>  
+					<option value="BEEDPRESCHL">BEEDPRESCHL</option>  
+					<option value="BEEDSPED">BEEDSPED</option>  
+					<option value="BEEDTHE">BEEDTHE</option>  
+					<option value="BEEDVAL">BEEDVAL</option>  
+					<option value="BSEDBIOLSCI">BSEDBIOLSCI</option>  
+					<option value="BSEDENGL">BSEDENGL</option>  
+					<option value="BSEDFIL">BSEDFIL</option>  
+					<option value="BSEDMATH">BSEDMATH</option>  
+					<option value="BSEDMAPEH">BSEDMAPEH</option>  
+					<option value="BSEDPHYSSCI">BSEDPHYSSCI</option>  
+					<option value="BSEDSS">BSEDSS</option>  
+
+
 				</select>
 				<select id="myInput6.1" required >  
 					<!-- <option value="Default">(Select remark)</option>   -->
@@ -43,43 +80,224 @@
 
 				</select>
 				<br>
-				
 				<label><b>Remarks</b></label>
-				<select name="country" id="myInput7">  
-					<!-- <option selected="" value="Default">(Select remark)</option>  --> 
-					<option value="Left">Left</option>  
+				<!-- <input type="text" id="myInput7" > -->
+				
+				<select name="remarks" id="myInput7" required >  
+					<!-- <option value="Default">(Select remark)</option>   -->
+					<option  value="Left">Left</option>  
 					<option value="Lost">Lost</option>
 					<option value="Confiscated">Confiscated</option>  
 				</select>
 
-			
-				<button class="addbtn" onclick="addData()">Add</button>
-				<button class="closebtn" onclick="cancel()">Cancel</button>
-			
-			
+
+				<button class="addbtn" onclick="addData()">ADD</button>
+				<button class="closebtn" onclick="cancel()">CANCEL</button>
 			</div>
+			</div>
+    </div>
+	
+    <div id="popupReport" class="modal">
+    	<div class="popup_container_report">
+    		<div class="content">
+
+
+    			<fieldset>
+					<legend>
+						From
+					</legend>
+					Month
+					<select name="" id="month_from"  >  
+						<!-- <option value="Default">(Select remark)</option>   -->
+						<option  value="1">January</option>  
+						<option  value="2">February</option>  
+						<option  value="3">March</option>  
+						<option  value="4">April</option>  
+						<option  value="5">May</option>  
+						<option  value="6">June</option>  
+						<option  value="7">July</option>  
+						<option  value="8">August</option>  
+						<option  value="9">September</option>  
+						<option  value="10">October</option>  
+						<option  value="11">November</option>  
+						<option  value="12">December</option>  
+
+					</select>
+
+					Day
+					<select name="" id="day_from">  
+						<!-- <option value="Default">(Select remark)</option>   -->
+						<option  value="1">1</option> 
+						<option  value="2">2</option> 
+						<option  value="3">3</option> 
+						<option  value="4">4</option> 
+						<option  value="5">5</option> 
+						<option  value="6">6</option> 
+						<option  value="7">7</option> 
+						<option  value="8">8</option> 
+						<option  value="9">9</option> 
+						<option  value="10">10</option> 
+						<option  value="11">11</option> 
+						<option  value="12">12</option> 
+						<option  value="13">13</option> 
+						<option  value="14">14</option> 
+						<option  value="15">15</option> 
+						<option  value="16">16</option> 
+						<option  value="17">17</option> 
+						<option  value="18">18</option> 
+						<option  value="19">19</option> 
+						<option  value="20">20</option> 
+						<option  value="21">21</option> 
+						<option  value="22">22</option> 
+						<option  value="23">23</option> 
+						<option  value="24">24</option> 
+						<option  value="25">25</option> 
+						<option  value="26">26</option> 
+						<option  value="27">27</option> 
+						<option  value="28">28</option> 
+						<option  value="29">29</option> 
+						<option  value="30">30</option> 
+						<option  value="31">31</option> 
+
+					</select>
+
+					Year
+					<select id="year_from">  
+						<!-- <option value="Default">(Select remark)</option>   -->
+							<option  value="2017">2017</option>
+							<option  value="2018">2018</option> 
+					</select>
+
+				</fieldset>
+
+
+				<fieldset>
+					<legend>
+						To
+					</legend>
+						Month
+						<select name="" id="month_to" >  
+							<!-- <option value="Default">(Select remark)</option>   -->
+							<option  value="1">January</option>  
+							<option  value="2">February</option>  
+							<option  value="3">March</option>  
+							<option  value="4">April</option>  
+							<option  value="5">May</option>  
+							<option  value="6">June</option>  
+							<option  value="7">July</option>  
+							<option  value="8">August</option>  
+							<option  value="9">September</option>  
+							<option  value="10">October</option>  
+							<option  value="11">November</option>  
+							<option  value="12">December</option> 
+						</select>
+
+						Day
+						<select name="" id="day_to">  
+							<!-- <option value="Default">(Select remark)</option>   -->
+							<option  value="1">1</option> 
+							<option  value="2">2</option> 
+							<option  value="3">3</option> 
+							<option  value="4">4</option> 
+							<option  value="5">5</option> 
+							<option  value="6">6</option> 
+							<option  value="7">7</option> 
+							<option  value="8">8</option> 
+							<option  value="9">9</option> 
+							<option  value="10">10</option> 
+							<option  value="11">11</option> 
+							<option  value="12">12</option> 
+							<option  value="13">13</option> 
+							<option  value="14">14</option> 
+							<option  value="15">15</option> 
+							<option  value="16">16</option> 
+							<option  value="17">17</option> 
+							<option  value="18">18</option> 
+							<option  value="19">19</option> 
+							<option  value="20">20</option> 
+							<option  value="21">21</option> 
+							<option  value="22">22</option> 
+							<option  value="23">23</option> 
+							<option  value="24">24</option> 
+							<option  value="25">25</option> 
+							<option  value="26">26</option> 
+							<option  value="27">27</option> 
+							<option  value="28">28</option> 
+							<option  value="29">29</option> 
+							<option  value="30">30</option> 
+							<option  value="31">31</option> 
+						</select>	
+
+						Year
+						<select name="" id="year_to" >  
+							<!-- <option value="Default">(Select remark)</option>   -->
+							<option  value="2017">2017</option>
+							<option  value="2018">2018</option> 
+
+						</select>
+
+
+				</fieldset>
+
+
+				<button class="createButtonReport" onclick="getJsonData()">Create Report</button>
+				<button class="closeButtonReport" onclick="cancelReport()">Cancel</button>
+
+    		</div>
+    	</div>
+    </div>
+
+
+
+	    <div class="modal" id="popupReportResult">
+			<div class="popup_container_report_result">
+				<div class="content">
+					<button class="closeReportResult" onclick="closeReport()">Close</button>
+					<table id="report_table">
+						<tr>
+							<th>Course</th>
+							<th>Total number of Borrowed ID</th>
+			                <th>Total number of Lost ID</th>
+			                <th>Total number of Left ID</th>
+							<th>Total number of Confiscated ID</th>
+						</tr>
+
+					</table>
+				</div>
+
 			</div>
 		</div>
-	</div>
+
+
+
+
 	
-	<div id="samp1">
-		<input type="text" id="user_input" class="searchBar" placeholder="Search">
+	<div id="samp1" >
+		<input type="text" id="user_input" class="searchBar" onkeyup="myFunction()" placeholder="Search ID number...">
+		<button class="sendToServer" type="button" onclick="sendData()">New Cycle</button>
+		<button  class="createReport" onclick="openPopupReport()">Create Report</button>
 		<button class="popup_button" onclick="openPopup()">+</button>
+
 	</div>
 	
-	<div id="samp2">
-		<table id="records" class="studRecords">
+	<div id="samp2" >
+		<!-- //class="studRecords" -->
+		<table id="myTable" class="rwd-table">
 			<tr>
 				<th>ID Number</th>
 				<th>Name</th>
-				 <th>Gate pass#</th>
-				 <th>Serial#</th>
+                <th>Gate pass Number</th>
+                <th>Serial Number</th>
 				<th>Date Borrowed</th>
 				<th>Date Returned</th>
+				<th>Course&year</th>
+				<th>Remarks</th>
 				<th>Action</th>
 			</tr>
 		</table>
-	<div>
+
+
+	</div>
 	
 </body>
 <script src="Functions.js"></script>
